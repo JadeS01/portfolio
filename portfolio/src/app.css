@@ -1,0 +1,12 @@
+.theme-lavendar {
+    --color-primary: theme('colors.light.primary');
+    /* set other lav variables */
+}
+
+.theme-peach {
+    --color-primary: theme('colors.light.primary');
+}
+
+.theme-ocean {
+    --color-primary: theme('colors.dark.primary');
+}
