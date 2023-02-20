@@ -2,3 +2,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        font-family: 'Mulish', sans-serif;
+    }
+}
+
+@layer components {
+    .lavender-card {
+        @apply bg-lavendar-primary rounded p-6 shadow-lg shadow-rose-600;
+    }
+
+    .peach-navbar {
+        @apply p-5 bg-peach-primary shadow md:flex md:items-center md:justify-between
+    }
+
+    .navbar-links {
+        @apply md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-inherit w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500
+    }
+
+    .link-wrapper {
+        @apply mx-4 my-6 md:my-0
+    }
+    .peach-link {
+        @apply text-xl hover:text-peach-tertiary duration-500
+    }
+
+    .peach-accent-button {
+        @apply bg-peach-accentColor text-peach-secondary duration-500 px-6 mx-4 hover:bg-peach-accentColorDark py-3 rounded-sm
+    }
+}
+/* @font-face {
+    font-family: 'Futura PT';
+    src: url('/static/futura medium bt.ttf') format('opentype');
+} */

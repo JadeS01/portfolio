@@ -1,10 +1,14 @@
 <script lang="ts">
 	let name = 'Jade';
-	import Footer from './Footer.svelte';
+	let theme = 'lavender';
+	import Footer from '../components/Footer.svelte';
+	import Navbar from '../components/Navbar.svelte';
+	import NavBar from '../components/Navbar.svelte';
 </script>
 
-<h1 class="text-red-700">Welcome to SvelteKit, {name}</h1>
+<h1 class="bg-peach-primary">Welcome to SvelteKit, {name}</h1>
+<Navbar />
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<footer>
+<!-- <footer class="lavender-card">
 	<Footer />
-</footer>
+</footer> -->
