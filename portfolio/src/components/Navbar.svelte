@@ -39,7 +39,6 @@
 			<li class="link-wrapper"><a href="/about" class="peach-link">About</a></li>
 			<li class="link-wrapper"><a href="/projects" class="peach-link">Projects</a></li>
 			<li class="link-wrapper"><a href="/resume" class="peach-link">Resume</a></li>
-			<li class="link-wrapper"><a href="/contact" class="peach-link">Contact</a></li>
 			<button class="peach-accent-button">Theme</button>
 		</ul>
 
@@ -47,7 +46,6 @@
 			<li><a href="/about" class="peach-link">About</a></li>
 			<li><a href="/projects" class="peach-link">Projects</a></li>
 			<li><a href="/resume" class="peach-link">Resume</a></li>
-			<li><a href="/contact" class="peach-link">Contact</a></li>
 			<button id="theme-button" class="peach-accent-button">Theme</button>
 		</ul>
 	</nav>
