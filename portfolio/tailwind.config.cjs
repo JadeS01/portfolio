@@ -13,7 +13,7 @@ const config = {
 					'tertiary': '#A594F9',
 				},
 				'peach': {
-					'primary': '#212427',
+					'primary': '#36160b',
 					'secondary': '#F0F0F0',
 					'tertiary': '#F1B5CB',
 				},
@@ -41,7 +41,8 @@ const config = {
 					'tertiary': '#F1B5CB',
 					'quaternary': '#E88EED',
 					'accentColor': '#D6D9CE',
-					'accentColorDark': '#C3C8B7'
+					'accentColorDark': '#C3C8B7',
+					'lines': '#36160b'
 				},
 				'ocean': {
 					'primary': '#0A2472',

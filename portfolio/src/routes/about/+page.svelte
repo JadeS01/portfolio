@@ -1,19 +1,25 @@
 <div>
 	<div class="p-5 peach-card">
-		<img
-			src="/Screen Shot 2023-02-19 at 9.16.02 PM.png"
-			alt="Jade"
-			class="rounded-full max-w-screen-sm min-w-screen-sm"
-			width="30%"
-		/>
+		<div class="flex items-center justify-center">
+			<img
+				src="/Screen Shot 2023-02-19 at 9.16.02 PM.png"
+				alt="Jade"
+				class="rounded-full max-w-screen-sm min-w-screen-sm"
+				width="30%"
+			/>
+		</div>
+		<div class="flex items-center justify-center">
+			<a href="https://www.linkedin.com/in/jade-simien-b30516207" class="fa fa-linkedin" />
+			<a href="mailto:jadecsimien@gmail.com" class="fa fa-google" />
+			<a href="https://github.com/JadeS01" class="fa fa-github" />
+		</div>
 		<div class="light-card">
 			<div>
-				I’m Jade, a web developer based in the heart of California’s Central Valley. I graduated in
-				2022 from San Francisco State University with a B.S. in Computer Science where I studied
-				full-stack web and mobile development as well as human-computer interaction. I enjoy
-				experimenting with new technologies to find the best solution for projects. I am determined
-				to continue learning and growing as a web developer. I am always open to new opportunities
-				and connections.
+				I’m Jade, a web developer based in California’s Central Valley. I graduated in 2022 from San
+				Francisco State University with a B.S. in Computer Science where I studied full-stack web
+				and mobile development as well as human-computer interaction. I enjoy experimenting with new
+				technologies to find the best solution for projects. I am determined to continue learning
+				and growing as a web developer. I am always open to new opportunities and connections.
 			</div>
 			<br />
 			<div>

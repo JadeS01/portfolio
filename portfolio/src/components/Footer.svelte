@@ -5,5 +5,5 @@
 </script>
 
 <div>
-	<div>Copyright © 2023 Jade Simien {theme}</div>
+	<div class="text-{theme}-primary">Copyright © 2023 Jade Simien {theme}</div>
 </div>

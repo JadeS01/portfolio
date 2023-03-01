@@ -7,15 +7,24 @@
     :root {
         font-family: 'Mulish', sans-serif;
     }
+
+    .bg-current-darken {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 }
 
 @layer components {
+
+    .fa {
+        @apply p-3 text-peach-primary px-4 py-2 rounded-full flex justify-center
+    }
+
     .lavender-card {
         @apply bg-lavendar-primary rounded p-6 shadow-lg shadow-rose-600;
     }
 
     .peach-card {
-        @apply bg-peach-secondary rounded-md p-6 shadow-lg shadow-peach-tertiary;
+        @apply bg-peach-secondary rounded-md p-6 shadow-lg shadow-peach-tertiary text-peach-primary;
     }
 
     .light-card {
@@ -23,7 +32,11 @@
     }
     
     .peach-navbar {
-        @apply p-5 bg-peach-primary shadow md:flex md:items-center md:justify-between
+        @apply fixed inset-x-0 p-5 bg-peach-primary shadow md:flex md:items-center md:justify-between text-peach-primary
+    }
+
+    .navbar-mobile {
+        @apply fixed inset-x-0 bg-inherit left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-inherit text-center md:hidden
     }
 
     .navbar-links {
@@ -34,11 +47,11 @@
         @apply mx-4 my-6 md:my-0
     }
     .peach-link {
-        @apply text-xl hover:text-peach-tertiary duration-500
+        @apply hover:text-peach-tertiary duration-500 text-base
     }
 
     .peach-accent-button {
-        @apply bg-peach-accentColor text-peach-secondary duration-500 px-6 mx-4 hover:bg-peach-accentColorDark py-3 rounded-sm
+        @apply bg-peach-quaternary text-peach-secondary duration-500 px-6 mx-4 hover:bg-peach-secondary py-3 rounded-sm
     }
 }
 /* @font-face {
