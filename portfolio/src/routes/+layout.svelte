@@ -6,6 +6,8 @@
 
 <main>
 	<Navbar />
-	<slot />
+	<div class="pt-12">
+		<slot />
+	</div>
 	<Footer />
 </main>

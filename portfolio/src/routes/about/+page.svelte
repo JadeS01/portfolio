@@ -1,17 +1,29 @@
+<script>
+</script>
+
 <div>
-	<div class="p-5 peach-card">
-		<div class="flex items-center justify-center">
-			<img
-				src="/Screen Shot 2023-02-19 at 9.16.02 PM.png"
-				alt="Jade"
-				class="rounded-full max-w-screen-sm min-w-screen-sm"
-				width="30%"
-			/>
-		</div>
-		<div class="flex items-center justify-center">
-			<a href="https://www.linkedin.com/in/jade-simien-b30516207" class="fa fa-linkedin" />
-			<a href="mailto:jadecsimien@gmail.com" class="fa fa-google" />
-			<a href="https://github.com/JadeS01" class="fa fa-github" />
+	<div class="peach-card">
+		<div class="light-card">
+			<div class="flex items-center justify-center">
+				<img
+					src="/Screen Shot 2023-02-19 at 9.16.02 PM.png"
+					alt="Jade"
+					class="rounded-full max-w-screen-sm min-w-screen-sm"
+					width="30%"
+				/>
+			</div>
+
+			<div class="flex items-center justify-center">
+				<div class="icon-border border-peach-primary">
+					<a href="https://www.linkedin.com/in/jade-simien-b30516207" class="fa fa-linkedin" />
+				</div>
+				<div class="icon-border border-peach-primary">
+					<a href="mailto:jadecsimien@gmail.com" class="fa fa-google" />
+				</div>
+				<div class="icon-border border-peach-primary">
+					<a href="https://github.com/JadeS01" class="fa fa-github" />
+				</div>
+			</div>
 		</div>
 		<div class="light-card">
 			<div>
