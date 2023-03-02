@@ -1,7 +1,8 @@
 <script lang="ts">
+	import Navbar from '../components/Navbar.svelte';
 	let name = 'Jade';
-	let theme = 'lavender';
-	import Contact from '../components/Contact.svelte';
+	// let theme = 'lavender';
+	// export let thisTheme: string = 'peach';
 </script>
 
 <!-- <h1 class="bg-peach-primary">Welcome to SvelteKit, {name}</h1>
@@ -22,9 +23,9 @@
 					I'm a hard-working '22 CS graduate with experience in full-stack web and mobile
 					development.
 				</p>
-				<div class="flex items-center justify-evenly">
-					<a>About Me</a>
-					<a>View Projects</a>
+				<div class="flex justify-evenly justify-items-start">
+					<a href="/about">About Me</a>
+					<a href="/projects">View Projects</a>
 				</div>
 			</div>
 			<div class="light-card flex items-center justify-center">
@@ -104,9 +105,6 @@
 				alt="PostgreSQL Badge"
 			/>
 		</div>
-	</div>
-	<div>
-		<Contact />
 	</div>
 </div>
 

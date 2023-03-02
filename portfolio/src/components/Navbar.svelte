@@ -1,5 +1,7 @@
-<script>
+<script lang="ts">
 	import Dropdown from './Dropdown.svelte';
+	export let options: any = [{}];
+	export let thisTheme: string = '';
 	function toggleMenu() {
 		if (typeof document !== 'undefined') {
 			const icon = document.querySelector('#icon');
@@ -8,14 +10,6 @@
 			// navLinks?.classList.toggle('hidden');
 			icon?.classList.toggle('bg-current-darken');
 			links?.classList.toggle('hidden');
-		} else {
-			console.warn('could not access document');
-		}
-	}
-	function toggleDropdown() {
-		if (typeof document !== 'undefined') {
-			const button = document.querySelector('#theme-button');
-			button?.classList.toggle('bg-current-darken');
 		} else {
 			console.warn('could not access document');
 		}
@@ -39,14 +33,16 @@
 			<li class="link-wrapper"><a href="/about" class="peach-link">About</a></li>
 			<li class="link-wrapper"><a href="/projects" class="peach-link">Projects</a></li>
 			<li class="link-wrapper"><a href="/resume" class="peach-link">Resume</a></li>
-			<button class="peach-accent-button">Theme</button>
+			<!-- <button class="peach-accent-button">Theme</button> -->
+			<Dropdown {options} bind:thisTheme />
 		</ul>
 
 		<ul id="links" class="hidden navbar-mobile">
 			<li><a href="/about" class="peach-link">About</a></li>
 			<li><a href="/projects" class="peach-link">Projects</a></li>
 			<li><a href="/resume" class="peach-link">Resume</a></li>
-			<button id="theme-button" class="peach-accent-button">Theme</button>
+			<!-- <button id="theme-button" class="peach-accent-button">Theme</button> -->
+			<Dropdown {options} bind:thisTheme />
 		</ul>
 	</nav>
 </div>
