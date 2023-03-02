@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Navbar from '../components/Navbar.svelte';
 	let name = 'Jade';
-	// let theme = 'lavender';
-	// export let thisTheme: string = 'peach';
+
+	import { theme } from '../stores/theme';
+
 </script>
 
 <!-- <h1 class="bg-peach-primary">Welcome to SvelteKit, {name}</h1>
@@ -13,7 +14,7 @@
 	<Footer />
 </footer> -->
 
-<div class="peach-card">
+<div class="{$theme}-card">
 	<div>
 		<div class="grid grid-cols-2">
 			<div class="light-card">

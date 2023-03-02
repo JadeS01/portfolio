@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Dropdown from './Dropdown.svelte';
-	export let options: any = [{}];
-	export let thisTheme: string = '';
+
 	function toggleMenu() {
 		if (typeof document !== 'undefined') {
 			const icon = document.querySelector('#icon');
@@ -34,7 +33,7 @@
 			<li class="link-wrapper"><a href="/projects" class="peach-link">Projects</a></li>
 			<li class="link-wrapper"><a href="/resume" class="peach-link">Resume</a></li>
 			<!-- <button class="peach-accent-button">Theme</button> -->
-			<Dropdown {options} bind:thisTheme />
+			<Dropdown />
 		</ul>
 
 		<ul id="links" class="hidden navbar-mobile">
@@ -42,7 +41,7 @@
 			<li><a href="/projects" class="peach-link">Projects</a></li>
 			<li><a href="/resume" class="peach-link">Resume</a></li>
 			<!-- <button id="theme-button" class="peach-accent-button">Theme</button> -->
-			<Dropdown {options} bind:thisTheme />
+			<Dropdown />
 		</ul>
 	</nav>
 </div>

@@ -1,28 +1,37 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import RepoCard from '../../components/RepoCard.svelte';
 	import ProfileCard from '../../components/ProfileCard.svelte';
-	let repos: any = [];
-	let profile: any = {};
-	onMount(async () => {
-		const res = await fetch('https://api.github.com/users/JadeS01/repos');
-		const res2 = await fetch('https://api.github.com/users/JadeS01');
-		const data = await res.json();
-		const data2 = await res2.json();
-		repos = data;
-		profile = data2;
-	});
+
+	const fetchJSON = (url: string): any => 
+		new Promise((res, rej) => 
+			fetch(url)
+			.then((e:Response) => e.json())
+			.then(res)
+			.catch(rej)
+		);
+
 </script>
 
 <div>
 	<div class="p-7">PROJECTS</div>
-	{#if profile}
-		<ProfileCard {profile} />
-	{:else}
+	
+	{#await fetchJSON('https://api.github.com/users/JadeS01')}
+		<!-- promise is pending -->
 		<div>Github Profile</div>
-	{/if}
+	{:then profile}
+		<!-- promise was fulfilled -->
+		<ProfileCard {profile} />
+	{:catch error}
+		<!-- promise was rejected -->
+		<p>Error :(</p>
+	{/await}
+	
 	<div class="grid grid-cols-11">
-		{#if repos.length}
+		{#await fetchJSON('https://api.github.com/users/JadeS01/repos')}
+			<!-- promise is pending -->
+			<div>No repos available</div>
+		{:then repos}
+			<!-- promise was fulfilled -->
 			<ul class="col-span-9 container m-auto grid grid-cols-4 gap-4">
 				{#each repos as repo}
 					<li>
@@ -30,8 +39,6 @@
 					</li>
 				{/each}
 			</ul>
-		{:else}
-			<div>No repos available</div>
-		{/if}
+		{/await}
 	</div>
 </div>
