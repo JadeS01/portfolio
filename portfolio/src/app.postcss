@@ -4,59 +4,58 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        font-family: 'Mulish', sans-serif;
-    }
-
-    .bg-current-darken {
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+	.bg-current-darken {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
 }
 
 @layer components {
+	.fa {
+		@apply p-3 text-peach-primary px-4 py-2 rounded-full flex justify-center;
+	}
 
-    .fa {
-        @apply p-3 text-peach-primary px-4 py-2 rounded-full flex justify-center
-    }
+	.icon-border {
+		@apply w-12 h-12 rounded-full border-2 flex items-center justify-center m-2;
+	}
 
-    .icon-border {
-        @apply w-12 h-12 rounded-full border-2 flex items-center justify-center m-2
-    }
+	.lavender-card {
+		@apply bg-lavendar-primary rounded p-6 shadow-lg shadow-rose-600;
+	}
 
-    .lavender-card {
-        @apply bg-lavendar-primary rounded p-6 shadow-lg shadow-rose-600;
-    }
+	.peach-card {
+		@apply bg-peach-secondary rounded-md p-6 shadow-lg shadow-peach-tertiary text-peach-primary;
+	}
 
-    .peach-card {
-        @apply bg-peach-secondary rounded-md p-6 shadow-lg shadow-peach-tertiary text-peach-primary;
-    }
+	.ocean-card {
+		@apply bg-lavendar-primary rounded p-6 shadow-lg shadow-rose-600;
+	}
 
-    .light-card {
-        @apply bg-lavender-secondary rounded-md p-6;
-    }
-    
-    .peach-navbar {
-        @apply fixed inset-x-0 p-3 bg-peach-primary shadow md:flex md:items-center md:justify-between text-peach-primary
-    }
+	.section {
+		@apply bg-lavender-secondary rounded-md p-6;
+	}
 
-    .navbar-mobile {
-        @apply fixed inset-x-0 bg-inherit left-0 top-0 w-full p-10 space-y-5 text-inherit text-center md:hidden
-    }
+	.peach-navbar {
+		@apply fixed inset-x-0 p-3 bg-peach-primary shadow md:flex md:items-center md:justify-between text-peach-primary;
+	}
 
-    .navbar-links {
-        @apply md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-inherit w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500
-    }
+	.navbar-mobile {
+		@apply fixed inset-x-0 bg-inherit left-0 top-0 w-full p-10 space-y-5 text-inherit text-center md:hidden;
+	}
 
-    .link-wrapper {
-        @apply mx-4 my-6 md:my-0
-    }
-    .peach-link {
-        @apply hover:text-peach-tertiary duration-500 text-base
-    }
+	.navbar-links {
+		@apply md:flex md:items-center z-[-1] md:z-auto md:static absolute bg-inherit w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-100;
+	}
 
-    .peach-accent-button {
-        @apply bg-peach-quaternary text-peach-secondary duration-500 px-6 mx-4 hover:bg-peach-secondary py-1 rounded-sm
-    }
+	.link-wrapper {
+		@apply mx-4 my-6 md:my-0;
+	}
+	.peach-link {
+		@apply hover:text-peach-tertiary duration-500 text-base;
+	}
+
+	.peach-accent-button {
+		@apply bg-peach-quaternary text-peach-secondary duration-500 px-6 mx-4 hover:bg-peach-secondary py-1 rounded-sm;
+	}
 }
 /* @font-face {
     font-family: 'Futura PT';

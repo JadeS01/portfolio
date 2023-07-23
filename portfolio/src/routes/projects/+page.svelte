@@ -2,19 +2,18 @@
 	import RepoCard from '../../components/RepoCard.svelte';
 	import ProfileCard from '../../components/ProfileCard.svelte';
 
-	const fetchJSON = (url: string): any => 
-		new Promise((res, rej) => 
+	const fetchJSON = (url: string): any =>
+		new Promise((res, rej) =>
 			fetch(url)
-			.then((e:Response) => e.json())
-			.then(res)
-			.catch(rej)
+				.then((e: Response) => e.json())
+				.then(res)
+				.catch(rej)
 		);
-
 </script>
 
 <div>
 	<div class="p-7">PROJECTS</div>
-	
+
 	{#await fetchJSON('https://api.github.com/users/JadeS01')}
 		<!-- promise is pending -->
 		<div>Github Profile</div>
@@ -23,9 +22,9 @@
 		<ProfileCard {profile} />
 	{:catch error}
 		<!-- promise was rejected -->
-		<p>Error :(</p>
+		<p>Error : {error}</p>
 	{/await}
-	
+
 	<div class="grid grid-cols-11">
 		{#await fetchJSON('https://api.github.com/users/JadeS01/repos')}
 			<!-- promise is pending -->

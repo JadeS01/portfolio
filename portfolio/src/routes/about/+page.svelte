@@ -1,9 +1,9 @@
-<script>
+<!-- <script>
 </script>
 
 <div>
 	<div class="peach-card">
-		<div class="light-card">
+		<div class="section">
 			<div class="flex items-center justify-center">
 				<img
 					src="/Screen Shot 2023-02-19 at 9.16.02 PM.png"
@@ -25,7 +25,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="light-card">
+		<div class="section">
 			<div>
 				I’m Jade, a software engineer based in California’s Central Valley. I graduated in 2022 from
 				San Francisco State University with a B.S. in Computer Science where I studied full-stack
@@ -40,4 +40,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->

@@ -5,54 +5,54 @@ const config = {
 		extend: {
 			// for text
 			colors: {
-				'lavender': {
+				lavender: {
 					// black
-					'primary': '#212427',
+					primary: '#212427',
 					// white
-					'secondary': '#F0F0F0',
-					'tertiary': '#A594F9',
+					secondary: '#F0F0F0',
+					tertiary: '#A594F9'
 				},
-				'peach': {
-					'primary': '#36160b',
-					'secondary': '#F0F0F0',
-					'tertiary': '#F1B5CB',
+				peach: {
+					primary: '#36160b',
+					secondary: '#F0F0F0',
+					tertiary: '#F1B5CB'
 				},
-				'ocean': {
-					'primary': '#F0F0F0',
-					'secondary': '#212427',
-					'tertiary': '#001C55'
+				ocean: {
+					primary: '#F0F0F0',
+					secondary: '#212427',
+					tertiary: '#001C55'
 				}
 			},
 			backgroundColor: {
-				'lavendar': {
+				lavendar: {
 					// main bg
-					'primary': '#CDC1FF',
+					primary: '#CDC1FF',
 					// boxes
-					'secondary': '#F5EFFF',
+					secondary: '#F5EFFF',
 					// shadow
-					'tertiary': '#A594F9',
+					tertiary: '#A594F9',
 					// darkest
-					'quaternary': '#7371FC',
-					'accentColor': '#E5D9F2'
+					quaternary: '#7371FC',
+					accentColor: '#E5D9F2'
 				},
-				'peach': {
-					'primary': '#F4C3C2',
-					'secondary': '#F3DAD8',
-					'tertiary': '#F1B5CB',
-					'quaternary': '#E88EED',
-					'accentColor': '#D6D9CE',
-					'accentColorDark': '#C3C8B7',
-					'lines': '#36160b'
+				peach: {
+					primary: '#F4C3C2',
+					secondary: '#F3DAD8',
+					tertiary: '#F1B5CB',
+					quaternary: '#E88EED',
+					accentColor: '#D6D9CE',
+					accentColorDark: '#C3C8B7',
+					lines: '#36160b'
 				},
-				'ocean': {
-					'primary': '#0A2472',
-					'secondary': '#0E6BA8',
-					'tertiary': '#001C55',
-					'quaternary': '#00072D',
-					'accentColor': '#A6E1FA'
+				ocean: {
+					primary: '#0A2472',
+					secondary: '#0E6BA8',
+					tertiary: '#001C55',
+					quaternary: '#00072D',
+					accentColor: '#A6E1FA'
 				}
-			},
-		},
+			}
+		}
 	},
 
 	plugins: []
