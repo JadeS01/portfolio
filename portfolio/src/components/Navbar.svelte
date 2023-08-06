@@ -32,9 +32,15 @@
 		</div>
 
 		<ul id="nav-links" class="navbar-links">
-			<li class="link-wrapper"><a href="/about" class="peach-link">About</a></li>
-			<li class="link-wrapper"><a href="/projects" class="peach-link">Projects</a></li>
-			<li class="link-wrapper"><a href="/resume" class="peach-link">Resume</a></li>
+			<li class="link-wrapper">
+				<a href="/about" class="peach-link">About</a>
+			</li>
+			<li class="link-wrapper">
+				<a href="/projects" class="peach-link">Projects</a>
+			</li>
+			<li class="link-wrapper">
+				<a href="/resume" class="peach-link">Resume</a>
+			</li>
 		</ul>
 
 		<ul id="links" class="hidden navbar-mobile">

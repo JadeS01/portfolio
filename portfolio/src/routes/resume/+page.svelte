@@ -1,6 +1,10 @@
 <div class="p-3">
 	<div>
-		<iframe id="pdf" src="jade_simien_complete_resume.docx.pdf" frameborder="0" />
+		<iframe
+			id="pdf"
+			src="jade_simien_complete_resume.docx.pdf"
+			frameborder="0"
+		/>
 	</div>
 </div>
 
