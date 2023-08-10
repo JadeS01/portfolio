@@ -1,5 +1,7 @@
 <script lang="ts">
 	// show Cal-Pal, Instrument-Website, Photo-Sharing-App, Offset, CSC648
+	import ChevronLeft from '../Svgs/ChevronLeft.svelte';
+	import ChevronRight from '../Svgs/ChevronRight.svelte';
 	type Project = {
 		title: string;
 		picture?: string;
@@ -48,27 +50,79 @@
 			url: ''
 		}
 	];
+
+	let currIdx = 0;
+	let length = projects.length - 1;
+
+	function handlePrev() {
+		if (currIdx === 0) {
+			currIdx = length;
+		} else {
+			currIdx--;
+		}
+	}
+
+	function handleNext() {
+		if (currIdx === length) {
+			currIdx = 0;
+		} else {
+			currIdx++;
+		}
+	}
+
+	function handleBubble(idx: number) {
+		currIdx = idx;
+	}
 </script>
 
-<div class="grid grid-cols-10">
-	<button> Previous </button>
-	<div class="col-span-8">
-		{#each projects as project}
-			<div class="card">
-				<div class="text-center font-bold">{project.title}</div>
-				{#if project.url}
-					<div>{project.url}</div>
-				{/if}
-				<div class="flex flex-row gap-1">
-					{#each project.skills as skill}
-						<div class="bg-cyan-400 rounded-[15px] font-light">{skill}</div>
-					{/each}
+<div class="flex row-span-3 justify-center items-center">
+	<button
+		class="icon-border border-ocean-primary shadow-md"
+		on:click={() => handlePrev()}
+	>
+		<ChevronLeft />
+	</button>
+	<div>
+		{#each projects as project, i}
+			{#if i === currIdx}
+				<div class="card">
+					<div class="text-center font-bold">{project.title}</div>
+					{#if project.url}
+						<div>{project.url}</div>
+					{/if}
+					<div class="flex flex-row gap-1">
+						{#each project.skills as skill}
+							<div class="bg-cyan-400 rounded-[15px] font-light">{skill}</div>
+						{/each}
+					</div>
+					<div>{project.description}</div>
 				</div>
-				<div>{project.description}</div>
-			</div>
+			{/if}
 		{/each}
 	</div>
-	<button> Next </button>
+	<button
+		class="icon-border border-ocean-primary shadow-md"
+		on:click={() => handleNext()}
+	>
+		<ChevronRight />
+	</button>
+</div>
+<div class="flex flex-row justify-center items-center">
+	{#each projects as _, i}
+		{#if i === currIdx}
+			<button on:click={() => handleBubble(i)}>
+				<div
+					class="font-bold icon-border h-[2rem] w-[2rem] border-ocean-primary bubble hover shadow-md"
+				/>
+			</button>
+		{:else}
+			<button on:click={() => handleBubble(i)}>
+				<div
+					class="icon-border h-[2rem] w-[2rem] border-ocean-primary hover shadow-md"
+				/>
+			</button>
+		{/if}
+	{/each}
 </div>
 
 <style>
@@ -77,5 +131,12 @@
 		width: 100%;
 		padding: 1rem;
 		border-radius: 15px 15px 15px 15px;
+	}
+	.bubble {
+		background-color: aliceblue;
+	}
+	.hover:hover {
+		background-color: rgba(240, 248, 255, 0.5);
+		cursor: pointer;
 	}
 </style>
