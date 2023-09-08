@@ -1,10 +1,11 @@
 <script lang="ts">
-	import Card from '../components/Card/index.svelte';
-	import Carousel from '../components/Carousel/index.svelte';
+	import Card from '../lib/components/Card/index.svelte';
+	import Carousel from '../lib/components/Carousel/index.svelte';
+	import ArrowUpRight from '../lib/components/Svgs/ArrowUpRight.svelte';
 </script>
 
 <div class="root">
-	<Card padding={'0 1rem'}>
+	<Card class="flex items-center justify-between">
 		<div class="sm:flex flex-row-reverse">
 			<div class="centerContent">
 				<img
@@ -15,7 +16,7 @@
 					width="300px"
 				/>
 			</div>
-			<div class="">
+			<div class="max-w-xl flex flex-col min-w-min justify-evenly">
 				<div class="text-3xl text-center sm:text-start">Jade Simien</div>
 				<div class="text-md text-center sm:text-start">Software Engineer</div>
 				<p>
@@ -26,11 +27,12 @@
 				<div
 					class="flex flex-row gap-5 justify-center align-middle sm:justify-start sm:align-top"
 				>
-					<button class="navigateButton">
+					<button class="navigateButton hover">
 						<a href="/about">About Me</a>
 					</button>
-					<button class="navigateButton">
+					<button class="navigateButton hover flex flex-row items-center">
 						<a href="/resume">Resume</a>
+						<ArrowUpRight />
 					</button>
 				</div>
 				<div
@@ -81,6 +83,9 @@
 			#b799ff
 		);
 		padding: 0.5rem 1rem 0.5rem 1rem;
-		border-radius: 100px;
+		border-radius: 5px;
+	}
+	.hover:hover {
+		filter: brightness(0.6);
 	}
 </style>

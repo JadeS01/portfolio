@@ -4,7 +4,11 @@ const config = {
 	theme: {
 		extend: {
 			// for text
+			fontFamily: {
+				'plus-jakarta-sans': ['Plus Jakarta Sans', 'sans']
+			},
 			colors: {
+				primary: '#300904',
 				lavender: {
 					// black
 					primary: '#212427',

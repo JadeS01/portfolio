@@ -1,6 +1,6 @@
 <script lang="ts">
-	import RepoCard from '../../components/RepoCard.svelte';
-	import ProfileCard from '../../components/ProfileCard.svelte';
+	import RepoCard from '../../lib/components/RepoCard.svelte';
+	import ProfileCard from '../../lib/components/ProfileCard.svelte';
 
 	const fetchJSON = (url: string): any =>
 		new Promise((res, rej) =>

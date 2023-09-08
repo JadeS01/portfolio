@@ -82,7 +82,7 @@
 	>
 		<ChevronLeft />
 	</button>
-	<div>
+	<div class="projectsContainer">
 		{#each projects as project, i}
 			{#if i === currIdx}
 				<div class="card">
@@ -126,6 +126,10 @@
 </div>
 
 <style>
+	.projectsContainer {
+		overflow: hidden;
+		transition: max-height 0.5s ease-in-out;
+	}
 	.card {
 		background-color: azure;
 		width: 100%;
