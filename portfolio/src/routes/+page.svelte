@@ -2,9 +2,86 @@
 	import Card from '../lib/components/Card/index.svelte';
 	import Carousel from '../lib/components/Carousel/index.svelte';
 	import ArrowUpRight from '../lib/components/Svgs/ArrowUpRight.svelte';
+	import Typography from '../lib/components/Typography/index.svelte';
 </script>
 
-<div class="root">
+<Card class="flex justify-center items-center p-4">
+	<div class="sm:flex flex-row-reverse">
+		<div class="centerContent">
+			<img
+				src="/Screen Shot 2023-02-19 at 9.16.02 PM.png"
+				alt="Jade"
+				class="rounded-full"
+				height="300px"
+				width="300px"
+			/>
+		</div>
+		<div class="max-w-xl flex flex-col min-w-min justify-evenly">
+			<Typography size="3xl" class="text-center sm:text-start">
+				Jade Simien
+			</Typography>
+			<Typography size="md" class="text-center sm:text-start"
+				>Software Engineer</Typography
+			>
+			<Typography weight="light">
+				I am a hard-working '22 CS graduate with experience in full-stack web
+				and mobile development. I am currently a Junior Software Engineer at
+				AXON Networks.
+			</Typography>
+			<div
+				class="flex flex-row gap-5 justify-center align-middle sm:justify-start sm:align-top"
+			>
+				<button class="navigateButton hover">
+					<a href="/about">About Me</a>
+				</button>
+				<button class="navigateButton hover flex flex-row items-center">
+					<a href="/resume">Resume</a>
+					<ArrowUpRight />
+				</button>
+			</div>
+			<div
+				class="flex flex-row justify-center align-middle sm:justify-start sm:align-top"
+			>
+				<div class="icon-border border-ocean-primary shadow-md">
+					<!-- svelte-ignore a11y-missing-content -->
+					<a
+						href="https://www.linkedin.com/in/jade-simien-b30516207"
+						class="fa fa-linkedin"
+					/>
+				</div>
+				<div class="icon-border border-ocean-primary shadow-md">
+					<!-- svelte-ignore a11y-missing-content -->
+					<a href="mailto:jadecsimien@gmail.com" class="fa fa-google" />
+				</div>
+
+				<div class="icon-border border-ocean-primary shadow-md">
+					<!-- svelte-ignore a11y-missing-content -->
+					<a href="https://github.com/JadeS01" class="fa fa-github" />
+				</div>
+			</div>
+		</div>
+	</div>
+</Card>
+<Card class="p-4">
+	<div>
+		<Typography>
+			I’m Jade, a software engineer based in California’s Central Valley. I
+			graduated in 2022 from San Francisco State University with a B.S. in
+			Computer Science where I studied full-stack web and mobile development as
+			well as human-computer interaction. I enjoy experimenting with new
+			technologies to find the best solution for projects and I am determined to
+			continue learning and growing as an engineer. I am always open to new
+			opportunities and connections.
+		</Typography>
+		<br />
+		<Typography>
+			When I am not working, I love to spend my time practicing piano, drawing,
+			going on boba crawls, and playing video games.
+		</Typography>
+	</div>
+</Card>
+
+<!-- <div class="root">
 	<Card class="flex items-center justify-between">
 		<div class="sm:flex flex-row-reverse">
 			<div class="centerContent">
@@ -39,19 +116,19 @@
 					class="flex flex-row justify-center align-middle sm:justify-start sm:align-top"
 				>
 					<div class="icon-border border-ocean-primary shadow-md">
-						<!-- svelte-ignore a11y-missing-content -->
+						svelte-ignore a11y-missing-content
 						<a
 							href="https://www.linkedin.com/in/jade-simien-b30516207"
 							class="fa fa-linkedin"
 						/>
 					</div>
 					<div class="icon-border border-ocean-primary shadow-md">
-						<!-- svelte-ignore a11y-missing-content -->
+						svelte-ignore a11y-missing-content
 						<a href="mailto:jadecsimien@gmail.com" class="fa fa-google" />
 					</div>
 
 					<div class="icon-border border-ocean-primary shadow-md">
-						<!-- svelte-ignore a11y-missing-content -->
+						svelte-ignore a11y-missing-content
 						<a href="https://github.com/JadeS01" class="fa fa-github" />
 					</div>
 				</div>
@@ -65,8 +142,7 @@
 		<a href="/projects">View More Projects</a>
 	</Card>
 	<div class="contact">Contact Me</div>
-</div>
-
+</div> -->
 <style>
 	.centerContent {
 		display: flex;

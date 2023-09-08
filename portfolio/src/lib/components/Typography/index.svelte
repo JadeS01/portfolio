@@ -3,6 +3,7 @@
 		| 'xs'
 		| 'sm'
 		| 'base'
+		| 'md'
 		| 'lg'
 		| 'xl'
 		| '2xl'
@@ -23,6 +24,7 @@
 		'text-xs': size === 'xs',
 		'text-sm': size === 'sm',
 		'text-base': size === 'base',
+		'text-md': size === 'md',
 		'text-lg': size === 'lg',
 		'text-xl': size === 'xl',
 		'text-2xl': size === '2xl',

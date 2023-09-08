@@ -6,7 +6,7 @@
 
 <main>
 	<Navbar />
-	<div style="padding: 4rem 0;">
+	<div>
 		<slot />
 	</div>
 	<!-- <Footer /> -->

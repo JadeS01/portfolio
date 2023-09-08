@@ -7,9 +7,6 @@
 	export let borderRadius: string = '0';
 </script>
 
-<div
-	class={clazz}
-	style="background-color: {backgroundColor}; padding: {padding}; border-radius: {borderRadius}; margin: {margin}"
->
+<div class={clazz}>
 	<slot />
 </div>
