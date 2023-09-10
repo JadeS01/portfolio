@@ -1,11 +1,8 @@
 <script lang="ts">
-	// default props can be: export let theme = "peach"
-	// export let theme: string;
+	import Typography from './Typography/index.svelte';
+	const year = new Date().getFullYear();
 </script>
 
-<div class="flex items-center justify-center">
-	<div class="text-xs">
-		<p class="text-xs">This portfolio is made with ❤︎ (Svelte + TailwindCSS)</p>
-		<p>Copyright © 2023 Jade Simien</p>
-	</div>
+<div class="flex items-center justify-center p-4">
+	<Typography size="xs">© {year} - Jade Simien</Typography>
 </div>
