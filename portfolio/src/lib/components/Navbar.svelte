@@ -2,7 +2,7 @@
 	import Typography from './Typography/index.svelte';
 </script>
 
-<div class="mx-4 py-4">
+<div class="background p-4 sticky top-0 z-10 w-full bg-red-400">
 	<nav class="flex flex-row justify-between">
 		<div
 			class="bg-red-500 bg-opacity-50 rounded-full w-[2rem] h-[2rem] flex justify-center text-center align-middle"
@@ -26,3 +26,9 @@
 		</div>
 	</nav>
 </div>
+
+<style>
+	.background {
+		background-color: #e6fffd;
+	}
+</style>

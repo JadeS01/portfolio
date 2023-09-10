@@ -26,18 +26,18 @@
 				they have met, exceeded, or fallen short of these goals. To further enhance the user experience, the app uses SwiftUICharts 
 				to visualize calorie statistics, making it easier for users to track their eating habits. To ensure user privacy, 
 				all data is securely stored locally through Core Data.`,
-			url: ''
+			url: 'https://github.com/JadeS01/CalPal'
 		},
 		{
 			title: 'Photo Sharing App',
-			skills: ['HTML5', 'CSS3', 'JavaScript', 'MySQL'],
+			skills: ['HTML5', 'CSS3', 'Node.js', 'MySQL'],
 			picture: 'PhotoSharingApp/Screen Shot 2023-08-12 at 10.11.33 AM.png',
 			description: `This is a web development project that involved the application of HTML5, CSS3, 
 				JavaScript, and MySQL to create a comprehensive full-stack website based off of image sharing platforms. The project incorporated a range of functionalities such as
 				search features, user sessions, and Create, Read, Update, Delete (CRUD) operations. The development process included 
 				the establishment of a server for a RESTful API using Node.js and Express, ensuring the handling and validation of data and requests. MySQL was used to store user account details, including hashed passwords.
 				The result of this development is a platform that allows users to create and log into accounts, create and search for posts, and comment on existing posts if they're logged in.`,
-			url: ''
+			url: 'https://github.com/JadeS01/Photo-Sharing-App'
 		},
 		{
 			title: 'Offset',
@@ -57,7 +57,7 @@
 				platform has numerous custom instruments, synthesizers, and music visualizers. With SQLite, the website stores 
 				preprogrammed songs as note-based data, enabling playback within the chosen instrument. The sounds are then produced through 
 				the utilization of Tone.js, providing a dynamic and engaging musical experience.`,
-			url: ''
+			url: 'https://github.com/JadeS01/Instrument-Website'
 		}
 	];
 
@@ -179,12 +179,15 @@
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 		{#each projects as project}
-			<div class="bg-white shadow-lg rounded-lg overflow-hidden">
-				<img
-					src={project.picture}
-					alt={project.title}
-					class="object-cover w-full h-48 sm:h-56"
-				/>
+			<div class="bg-white shadow-lg rounded-lg">
+				<!-- object-cover w-full h-48 sm:h-56 -->
+				<div class="max-h-48 overflow-auto">
+					<img
+						src={project.picture}
+						alt={project.title}
+						class="w-full h-auto max-h-[100%] object-contain"
+					/>
+				</div>
 				<div class="p-4 flex flex-row justify-between items-center">
 					<Typography size="lg" weight="semiBold">{project.title}</Typography>
 					<Button on:click={() => handleSelect(project)}>Details</Button>
@@ -195,11 +198,13 @@
 </Card>
 
 <Modal open={$open} {handleModal}>
-	<img
-		src={$selectedProject.picture}
-		alt="img"
-		class="max-w-[400px] max-h-[300px] overflow-y-scroll"
-	/>
+	<div class="max-h-[170px] overflow-auto">
+		<img
+			src={$selectedProject.picture}
+			alt={$selectedProject.title}
+			class="w-full h-auto max-h-[100%] object-contain"
+		/>
+	</div>
 	<div class="mb-4 flex flex-row justify-between">
 		<Typography size="lg" weight="semiBold">{$selectedProject.title}</Typography
 		>
@@ -209,7 +214,7 @@
 			{/each}
 		</div>
 	</div>
-	<Typography class="max-h-[240px] overflow-y-scroll">
+	<Typography class="max-h-[210px] overflow-y-scroll">
 		{$selectedProject.description}
 	</Typography>
 	<button
