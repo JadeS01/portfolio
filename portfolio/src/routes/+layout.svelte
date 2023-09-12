@@ -2,21 +2,23 @@
 	import '../app.postcss';
 	import Navbar from '../lib/components/Navbar.svelte';
 	import Footer from '../lib/components/Footer.svelte';
+	import { QueryClient, QueryClientProvider } from '@sveltestack/svelte-query';
+
+	const queryClient = new QueryClient();
 </script>
 
-<main>
-	<Navbar />
-	<div>
-		<slot />
-	</div>
-	<Footer />
-</main>
+<QueryClientProvider client={queryClient}>
+	<main>
+		<Navbar />
+		<div>
+			<slot />
+		</div>
+		<Footer />
+	</main>
+</QueryClientProvider>
 
 <style>
 	main {
-		/* #B799FF purple */
-		/* #AEE2FF light blue */
-		/* #E6FFFD very light teal */
 		background-image: linear-gradient(
 			to top,
 			#b799ff,
@@ -33,6 +35,5 @@
 			#e6fffd
 		);
 		color: #303655;
-		/* color: #DFE9EB  */
 	}
 </style>

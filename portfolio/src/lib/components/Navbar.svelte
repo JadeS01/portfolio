@@ -1,17 +1,26 @@
 <script lang="ts">
 	import Typography from './Typography/index.svelte';
+	import { goto } from '$app/navigation';
+
+	function gotoHome() {
+		goto('/');
+	}
 </script>
 
-<div class="background p-4 sticky top-0 z-10 w-full bg-red-400">
+<div class="background p-4 sticky top-0 z-10 w-full">
 	<nav class="flex flex-row justify-between">
+		<img
+			class="hover:cursor-pointer"
+			src="Logo2.svg"
+			alt="icon"
+			width="50px"
+			height="50px"
+			on:click={() => gotoHome()}
+			on:keydown={() => gotoHome()}
+		/>
 		<div
-			class="bg-red-500 bg-opacity-50 rounded-full w-[2rem] h-[2rem] flex justify-center text-center align-middle"
+			class="flex flex-row justify-between sm:gap-x-8 gap-x-4 transition-transform ease-in transform"
 		>
-			<Typography size="2xl" weight="bold">
-				<a href="/">JS</a>
-			</Typography>
-		</div>
-		<div class="flex flex-row justify-between gap-x-8">
 			<Typography>
 				<a href="/">Home</a>
 			</Typography>

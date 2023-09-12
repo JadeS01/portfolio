@@ -14,7 +14,10 @@
 	import Typography from '../lib/components/Typography/index.svelte';
 	import Modal from '../lib/components/Modal/index.svelte';
 	import Button from '../lib/components/Button/index.svelte';
+	import Biography from '../lib/widgets/Biography/index.svelte';
+	import Intro from '../lib/widgets/Intro/index.svelte';
 	import { writable } from 'svelte/store';
+	import { goto } from '$app/navigation';
 	let projects: Project[] = [
 		{
 			title: 'Cal-Pal',
@@ -70,122 +73,26 @@
 	function handleModal() {
 		open.set(!$open);
 	}
+	function gotoProjects() {
+		goto('/projects');
+	}
 </script>
 
-<Card class="flex justify-center items-center p-4  gap-y-8">
-	<div class="sm:flex flex-row-reverse">
-		<div class="centerContent">
-			<!-- instead of pfp, try the typing animation: #15 https://alvarotrigo.com/blog/css-text-animations/-->
-			<img
-				src="/Screen Shot 2023-02-19 at 9.16.02 PM.png"
-				alt="Jade"
-				class="rounded-full"
-				height="300px"
-				width="300px"
-			/>
-		</div>
-		<div class="max-w-xl flex flex-col min-w-min justify-evenly">
-			<Typography size="3xl" weight="bold" class="text-center sm:text-start">
-				Jade Simien
-			</Typography>
-			<Typography size="md" class="text-center sm:text-start"
-				>Software Engineer</Typography
-			>
-			<Typography weight="light">
-				I am a hard-working software engineer with experience in full-stack web
-				and mobile development.
-			</Typography>
-			<div
-				class="flex flex-row gap-5 justify-center align-middle sm:justify-start sm:align-top"
-			>
-				<Button class="flex flex-row items-center">
-					<a href="/resume">Resume</a>
-					<ArrowUpRight />
-				</Button>
-			</div>
-			<div
-				class="flex flex-row justify-center align-middle sm:justify-start sm:align-top"
-			>
-				<div class="icon-border border-ocean-primary shadow-md">
-					<!-- svelte-ignore a11y-missing-content -->
-					<a
-						href="https://www.linkedin.com/in/jade-simien-b30516207"
-						class="fa fa-linkedin"
-					/>
-				</div>
-				<div class="icon-border border-ocean-primary shadow-md">
-					<!-- svelte-ignore a11y-missing-content -->
-					<a href="mailto:jadecsimien@gmail.com" class="fa fa-google" />
-				</div>
-
-				<div class="icon-border border-ocean-primary shadow-md">
-					<!-- svelte-ignore a11y-missing-content -->
-					<a href="https://github.com/JadeS01" class="fa fa-github" />
-				</div>
-			</div>
-		</div>
-	</div>
-</Card>
-<Card class="bio flex flex-col p-4 gap-y-4 bg-white bg-opacity-50">
-	<div>
-		<Typography size="2xl" weight="bold">About Me</Typography>
-		<Typography>
-			I’m Jade, a software engineer based in California’s Central Valley, and
-			currently working for AXON Networks with a focus on frontend development.
-			I graduated in 2022 from San Francisco State University with a B.S. in
-			Computer Science where I studied full-stack web and mobile development as
-			well as human-computer interaction. I enjoy experimenting with new
-			technologies to find the best solution for projects and I am determined to
-			continue learning and growing as an engineer. I am always open to new
-			opportunities and connections.
-		</Typography>
-	</div>
-	<div class="flex flex-col gap-y-4">
-		<Typography size="lg" weight="light">My Expertise</Typography>
-		<div
-			class="sm:grid sm:grid-cols-3 sm:gap-x-4 max-sm:grid max-sm:grid-rows-3 max-sm:gap-y-4"
-		>
-			<div class="bg-white bg-opacity-50 rounded-lg p-4 shadow-lg">
-				<Typography size="lg" weight="semiBold">Frontend Development</Typography
-				>
-				<Typography
-					>Transforming designs into dynamic and responsive applications with
-					reusable UI components in React, Vue, and Svelte.</Typography
-				>
-			</div>
-			<div class="bg-white bg-opacity-50 rounded-lg p-4 shadow-lg">
-				<Typography size="lg" weight="semiBold">Mobile Development</Typography>
-				<Typography
-					>Developing user-friendly mobile applications, with expertise in Swift
-					for the iOS platform.</Typography
-				>
-			</div>
-			<div class="bg-white bg-opacity-50 rounded-lg p-4 shadow-lg">
-				<Typography size="lg" weight="semiBold">Database Management</Typography>
-				<Typography
-					>Familiar with both relational and NoSQL databases in design and
-					querying.</Typography
-				>
-			</div>
-		</div>
-	</div>
-</Card>
+<Intro />
+<Biography />
 <Card class="p-4">
 	<div class="flex flex-row justify-between items-center">
 		<Typography size="2xl" weight="bold">Featured Projects</Typography>
-		<Button>
-			<a href="/projects">View All</a>
-		</Button>
+		<Button on:click={() => gotoProjects()}>View All</Button>
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 		{#each projects as project}
 			<div class="bg-white shadow-lg rounded-lg">
-				<!-- object-cover w-full h-48 sm:h-56 -->
 				<div class="max-h-48 overflow-auto">
 					<img
 						src={project.picture}
 						alt={project.title}
-						class="w-full h-auto max-h-[100%] object-contain"
+						class="w-full h-auto max-h-[100%] object-contain rounded-t-lg"
 					/>
 				</div>
 				<div class="p-4 flex flex-row justify-between items-center">
@@ -205,18 +112,23 @@
 			class="w-full h-auto max-h-[100%] object-contain"
 		/>
 	</div>
-	<div class="mb-4 flex flex-row justify-between">
+	<div class="mb-4 flex flex-row">
 		<Typography size="lg" weight="semiBold">{$selectedProject.title}</Typography
 		>
-		<div class="flex flex-row justify-evenly">
-			{#each $selectedProject.skills as skill}
-				<span class="bg-red-500 rounded-full p-1">{skill}</span>
-			{/each}
-		</div>
 	</div>
 	<Typography class="max-h-[210px] overflow-y-scroll">
 		{$selectedProject.description}
 	</Typography>
+	<div class="py-4 flex flex-row flex-wrap sm:items-center sm:gap-x-4 gap-x-2">
+		<Typography>Skills Used:</Typography>
+		<div class="flex flex-row flex-wrap gap-x-2">
+			{#each $selectedProject.skills as skill, idx}
+				<div class="language rounded-full p-1 sm:m-0 m-1" data-idx={`${idx}`}>
+					{skill}
+				</div>
+			{/each}
+		</div>
+	</div>
 	<button
 		class="mt-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md text-gray-700"
 		on:click={handleModal}
@@ -226,9 +138,19 @@
 </Modal>
 
 <style>
-	.centerContent {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	.language[data-idx='0'] {
+		background-color: #5680e9; /* Set your language color here */
+	}
+	.language[data-idx='1'] {
+		background-color: #84ceeb; /* Set your language color here */
+	}
+	.language[data-idx='2'] {
+		background-color: #5ab9ea; /* Set your language color here */
+	}
+	.language[data-idx='3'] {
+		background-color: #92a4ec; /* Set your language color here */
+	}
+	.language[data-idx='4'] {
+		background-color: #8860d0; /* Set your language color here */
 	}
 </style>
