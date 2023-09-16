@@ -20,6 +20,8 @@
 </script>
 
 <div
+	on:click
+	on:keydown
 	class={clsx('font-plus-jakarta-sans', 'text-primary', clazz, {
 		'text-xs': size === 'xs',
 		'text-sm': size === 'sm',

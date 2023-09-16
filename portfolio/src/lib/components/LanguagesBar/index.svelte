@@ -6,9 +6,15 @@
 
 <script lang="ts">
 	import Typography from '../Typography/index.svelte';
+	import Tooltip from '../Tooltip/index.svelte';
 	import { useRepoLanguages } from '$lib/queries/useRepoLanguages';
-	import { derived } from 'svelte/store';
+	import { derived, writable } from 'svelte/store';
 	export let languages: string;
+
+	let x: number;
+	let y: number;
+	const showTooltip = writable(false);
+	const tooltipLanguage = writable('SQL');
 
 	const languagesQuery = useRepoLanguages(languages, false);
 	type LanguageEntries = { language: string; percentage: number };
@@ -29,12 +35,41 @@
 		});
 		return languageEntries;
 	});
+	languagesQuery.subscribe((languagesQuery) => {
+		if (languagesQuery.data === undefined) {
+			languagesQuery.refetch();
+		}
+	});
+
+	function mouseEnter(e: MouseEvent, language: string) {
+		if (!$showTooltip) {
+			showTooltip.set(true);
+			tooltipLanguage.set(language);
+			x = e.clientX + 5;
+			y = e.clientY + 5;
+		}
+	}
+
+	function mouseLeave(e: MouseEvent) {
+		showTooltip.set(false);
+		tooltipLanguage.set('SQL');
+	}
+
+	function mouseMove(e: MouseEvent) {
+		if ($showTooltip) {
+			x = e.clientX + 5;
+			y = e.clientY + 5;
+		}
+	}
 </script>
 
 {#if $languageEntries.length > 0}
 	<div class="language-bar rounded-lg">
 		{#each $languageEntries as entry, idx}
 			<div
+				on:mouseenter={(e) => mouseEnter(e, entry.language)}
+				on:mousemove={(e) => mouseMove(e)}
+				on:mouseleave={(e) => mouseLeave(e)}
 				class="language"
 				style={`width: ${entry.percentage}%`}
 				data-idx={`${idx}`}
@@ -59,7 +94,13 @@
 	</div>
 {:else}
 	<div class="language-bar rounded-lg">
-		<div class="language w-full" data-idx={`0`} />
+		<div
+			class="language w-full"
+			data-idx={`0`}
+			on:mouseenter={(e) => mouseEnter(e, 'SQL')}
+			on:mousemove={(e) => mouseMove(e)}
+			on:mouseleave={(e) => mouseLeave(e)}
+		/>
 	</div>
 	<div class="flex flex-row gap-x-2">
 		<div
@@ -72,6 +113,10 @@
 		</div>
 	</div>
 {/if}
+
+<Tooltip showTooltip={$showTooltip} {x} {y} class="bg-[#f1f1f1] rounded-lg p-4">
+	{$tooltipLanguage}
+</Tooltip>
 
 <style>
 	.language-bar {
@@ -88,6 +133,12 @@
 		padding: 8px;
 		font-size: 14px;
 		background-color: #f1f1f1;
+	}
+	.language:hover {
+		cursor: pointer;
+	}
+	.language2:hover {
+		cursor: pointer;
 	}
 
 	.language[data-idx='0'] {

@@ -81,7 +81,7 @@
 <Intro />
 <Biography />
 <Card class="p-4">
-	<div class="flex flex-row justify-between items-center">
+	<div class="flex flex-row justify-between items-center pb-4">
 		<Typography size="2xl" weight="bold">Featured Projects</Typography>
 		<Button on:click={() => gotoProjects()}>View All</Button>
 	</div>
