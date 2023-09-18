@@ -9,6 +9,7 @@
 		| '2xl'
 		| '3xl';
 	export type TypographyWeight = 'light' | 'base' | 'semiBold' | 'bold';
+	export type TypographyVariant = 'error' | 'base' | 'success';
 </script>
 
 <script lang="ts">
@@ -17,6 +18,7 @@
 	export { clazz as class };
 	export let size: TypographySize = 'base';
 	export let weight: TypographyWeight = 'base';
+	export let variant: TypographyVariant = 'base';
 </script>
 
 <div
@@ -34,7 +36,9 @@
 		'font-light': weight === 'light',
 		'font-normal': weight === 'base',
 		'font-semibold': weight === 'semiBold',
-		'font-bold': weight === 'bold'
+		'font-bold': weight === 'bold',
+		'text-red-600': variant === 'error',
+		'text-green-500': variant === 'success'
 	})}
 >
 	<slot />

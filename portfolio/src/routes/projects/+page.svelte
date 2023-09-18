@@ -13,9 +13,7 @@
 		return repos.data as Repo[];
 	});
 	repos.subscribe((repos) => {
-		console.log('call');
 		if (repos.data === undefined) {
-			console.log('refetch');
 			repos.refetch();
 		}
 	});

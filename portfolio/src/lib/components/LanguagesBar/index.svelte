@@ -142,34 +142,34 @@
 	}
 
 	.language[data-idx='0'] {
-		background-color: #5680e9; /* Set your language color here */
+		background-color: #5680e9;
 	}
 	.language[data-idx='1'] {
-		background-color: #84ceeb; /* Set your language color here */
+		background-color: #84ceeb;
 	}
 	.language[data-idx='2'] {
-		background-color: #5ab9ea; /* Set your language color here */
+		background-color: #5ab9ea;
 	}
 	.language[data-idx='3'] {
-		background-color: #92a4ec; /* Set your language color here */
+		background-color: #92a4ec;
 	}
 	.language[data-idx='4'] {
-		background-color: #8860d0; /* Set your language color here */
+		background-color: #8860d0;
 	}
 
 	.language2[data-idx='0'] {
-		background-color: #5680e9; /* Set your language color here */
+		background-color: #5680e9;
 	}
 	.language2[data-idx='1'] {
-		background-color: #84ceeb; /* Set your language color here */
+		background-color: #84ceeb;
 	}
 	.language2[data-idx='2'] {
-		background-color: #5ab9ea; /* Set your language color here */
+		background-color: #5ab9ea;
 	}
 	.language2[data-idx='3'] {
-		background-color: #92a4ec; /* Set your language color here */
+		background-color: #92a4ec;
 	}
 	.language2[data-idx='4'] {
-		background-color: #8860d0; /* Set your language color here */
+		background-color: #8860d0;
 	}
 </style>

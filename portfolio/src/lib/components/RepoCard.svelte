@@ -34,7 +34,6 @@
 		<Typography size="md" weight="semiBold">{repo.name}</Typography>
 		<Typography>{repo.description || 'No Description'}</Typography>
 	</div>
-	<!-- Language Bar -->
 	{#if repo.languages_url}
 		<LanguagesBar languages={repo.languages_url} />
 	{/if}

@@ -5,7 +5,7 @@
 
 <Card class="bio flex flex-col p-4 gap-y-4 bg-white bg-opacity-50">
 	<div>
-		<Typography size="2xl" weight="bold">About Me</Typography>
+		<Typography size="2xl" weight="bold" class="mb-4">About Me</Typography>
 		<Typography>
 			I’m Jade, a software engineer based in California’s Central Valley, and
 			currently working for AXON Networks with a focus on frontend development.

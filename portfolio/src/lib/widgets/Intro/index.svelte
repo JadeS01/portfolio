@@ -9,8 +9,8 @@
 	}
 </script>
 
-<Card class="flex justify-center items-center p-4  gap-y-8">
-	<div class="sm:flex flex-row-reverse">
+<Card class="flex items-center p-4  gap-y-8">
+	<div class="sm:flex w-full flex-row-reverse justify-between">
 		<div class="flex justify-center items-center">
 			<!-- instead of pfp, try the typing animation: #15 https://alvarotrigo.com/blog/css-text-animations/-->
 			<img
@@ -35,10 +35,7 @@
 			<div
 				class="flex flex-row gap-5 justify-center align-middle sm:justify-start sm:align-top"
 			>
-				<Button
-					class="flex flex-row items-center"
-					on:click={() => gotoResume()}
-				>
+				<Button class="max-sm:w-[50%]" on:click={() => gotoResume()}>
 					Resume
 				</Button>
 			</div>

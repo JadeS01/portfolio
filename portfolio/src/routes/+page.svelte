@@ -10,12 +10,12 @@
 
 <script lang="ts">
 	import Card from '../lib/components/Card/index.svelte';
-	import ArrowUpRight from '../lib/components/Svgs/ArrowUpRight.svelte';
 	import Typography from '../lib/components/Typography/index.svelte';
 	import Modal from '../lib/components/Modal/index.svelte';
 	import Button from '../lib/components/Button/index.svelte';
 	import Biography from '../lib/widgets/Biography/index.svelte';
 	import Intro from '../lib/widgets/Intro/index.svelte';
+	import ContactForm from '../lib/widgets/ContactForm/index.svelte';
 	import { writable } from 'svelte/store';
 	import { goto } from '$app/navigation';
 	let projects: Project[] = [
@@ -87,12 +87,14 @@
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 		{#each projects as project}
-			<div class="bg-white shadow-lg rounded-lg">
-				<div class="max-h-48 overflow-auto">
+			<div
+				class="bg-white shadow-lg rounded-lg flex flex-col h-full justify-between"
+			>
+				<div class="max-h-48 bg-gray-200 rounded-t-lg">
 					<img
 						src={project.picture}
 						alt={project.title}
-						class="w-full h-auto max-h-[100%] object-contain rounded-t-lg"
+						class="w-full h-auto max-h-[100%] object-contain rounded-lg"
 					/>
 				</div>
 				<div class="p-4 flex flex-row justify-between items-center">
@@ -103,54 +105,67 @@
 		{/each}
 	</div>
 </Card>
+<ContactForm class="bg-white bg-opacity-50" />
 
 <Modal open={$open} {handleModal}>
-	<div class="max-h-[170px] overflow-auto">
-		<img
-			src={$selectedProject.picture}
-			alt={$selectedProject.title}
-			class="w-full h-auto max-h-[100%] object-contain"
-		/>
-	</div>
-	<div class="mb-4 flex flex-row">
-		<Typography size="lg" weight="semiBold">{$selectedProject.title}</Typography
-		>
-	</div>
-	<Typography class="max-h-[210px] overflow-y-scroll">
-		{$selectedProject.description}
-	</Typography>
-	<div class="py-4 flex flex-row flex-wrap sm:items-center sm:gap-x-4 gap-x-2">
-		<Typography>Skills Used:</Typography>
-		<div class="flex flex-row flex-wrap gap-x-2">
-			{#each $selectedProject.skills as skill, idx}
-				<div class="language rounded-full p-1 sm:m-0 m-1" data-idx={`${idx}`}>
-					{skill}
+	<div class="h-full flex flex-col justify-between">
+		<div>
+			<div class="max-h-[170px] overflow-auto">
+				<img
+					src={$selectedProject.picture}
+					alt={$selectedProject.title}
+					class="w-full h-auto max-h-[100%] object-contain"
+				/>
+			</div>
+			<div class="mb-4 flex flex-row">
+				<Typography size="lg" weight="semiBold"
+					>{$selectedProject.title}</Typography
+				>
+			</div>
+			<Typography class="max-h-[210px] overflow-y-scroll">
+				{$selectedProject.description}
+			</Typography>
+			<div
+				class="py-4 flex flex-row flex-wrap sm:items-center sm:gap-x-4 gap-x-2"
+			>
+				<Typography>Skills Used:</Typography>
+				<div class="flex flex-row flex-wrap gap-x-2">
+					{#each $selectedProject.skills as skill, idx}
+						<div
+							class="language rounded-full p-1 sm:m-0 m-1"
+							data-idx={`${idx}`}
+						>
+							{skill}
+						</div>
+					{/each}
 				</div>
-			{/each}
+			</div>
+		</div>
+		<div class="grid grid-cols-2 gap-x-4">
+			<Button on:click={handleModal} variant="close" class="w-full"
+				>Close</Button
+			>
+			<Button on:click={() => goto($selectedProject.url)} class="w-full"
+				>View Project</Button
+			>
 		</div>
 	</div>
-	<button
-		class="mt-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-md text-gray-700"
-		on:click={handleModal}
-	>
-		Close
-	</button>
 </Modal>
 
 <style>
 	.language[data-idx='0'] {
-		background-color: #5680e9; /* Set your language color here */
+		background-color: #5680e9;
 	}
 	.language[data-idx='1'] {
-		background-color: #84ceeb; /* Set your language color here */
+		background-color: #84ceeb;
 	}
 	.language[data-idx='2'] {
-		background-color: #5ab9ea; /* Set your language color here */
+		background-color: #5ab9ea;
 	}
 	.language[data-idx='3'] {
-		background-color: #92a4ec; /* Set your language color here */
+		background-color: #92a4ec;
 	}
 	.language[data-idx='4'] {
-		background-color: #8860d0; /* Set your language color here */
+		background-color: #8860d0;
 	}
 </style>

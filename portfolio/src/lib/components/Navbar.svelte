@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Button from '../components/Button/index.svelte';
-	import Typography from './Typography/index.svelte';
 	import { goto } from '$app/navigation';
 
 	function gotoHome() {

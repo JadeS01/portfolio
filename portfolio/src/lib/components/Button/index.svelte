@@ -4,13 +4,18 @@
 	let clazz: string = '';
 	export let noBackground: boolean = false;
 	export let noPadding: boolean = false;
+	export let buttonType: 'reset' | 'submit' | 'button' | null | undefined =
+		'button';
+	export let variant: 'base' | 'close' = 'base';
 	export { clazz as class };
 </script>
 
 <button
+	type={buttonType}
 	class={clsx('navigateButton hover', clazz, {
-		primary: !noBackground,
-		padding: !noPadding
+		primary: variant === 'base' && !noBackground,
+		padding: !noPadding,
+		'bg-gray-400': variant === 'close'
 	})}
 	on:click
 >
