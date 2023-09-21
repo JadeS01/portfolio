@@ -28,14 +28,19 @@
 			<Typography size="md" class="text-center sm:text-start"
 				>Software Engineer</Typography
 			>
-			<Typography weight="light">
+			<Typography weight="light" class="max-sm:text-center my-4">
 				I am a hard-working software engineer with experience in full-stack web
 				and mobile development.
 			</Typography>
 			<div
 				class="flex flex-row gap-5 justify-center align-middle sm:justify-start sm:align-top"
 			>
-				<Button class="max-sm:w-[50%]" on:click={() => gotoResume()}>
+				<Button
+					class="max-sm:w-[50%] mb-4"
+					on:click={() => gotoResume()}
+					variant="redirect"
+					typographyVariant="inherit"
+				>
 					Resume
 				</Button>
 			</div>

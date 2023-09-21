@@ -33,7 +33,7 @@
 		},
 		{
 			title: 'Photo Sharing App',
-			skills: ['HTML5', 'CSS3', 'Node.js', 'MySQL'],
+			skills: ['Node.js', 'MySQL'],
 			picture: 'PhotoSharingApp/Screen Shot 2023-08-12 at 10.11.33 AM.png',
 			description: `This is a web development project that involved the application of HTML5, CSS3, 
 				JavaScript, and MySQL to create a comprehensive full-stack website based off of image sharing platforms. The project incorporated a range of functionalities such as
@@ -83,7 +83,11 @@
 <Card class="p-4">
 	<div class="flex flex-row justify-between items-center pb-4">
 		<Typography size="2xl" weight="bold">Featured Projects</Typography>
-		<Button on:click={() => gotoProjects()}>View All</Button>
+		<Button
+			on:click={() => gotoProjects()}
+			variant="redirect"
+			typographyVariant="inherit">View All</Button
+		>
 	</div>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 		{#each projects as project}

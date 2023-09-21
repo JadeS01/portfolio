@@ -40,28 +40,17 @@
 			}
 		);
 	}
-	function handleSubmit() {
-		sent.set([false, 'unsent']);
-		const nameError = isNotValidText($message.name);
-		const emailError = !isValidEmail($message.email);
-		const contentError = isNotValidText($message.content);
-		if (nameError || emailError || contentError) {
-			if (nameError) {
+
+	function handleError(prop: 'name' | 'email' | 'content', isError: boolean) {
+		if (isError) {
+			if (prop === 'name') {
 				error.update((error) => {
 					return {
 						...error,
 						name: 'Please enter a name.'
 					};
 				});
-			} else {
-				error.update((error) => {
-					return {
-						...error,
-						name: ''
-					};
-				});
-			}
-			if (emailError) {
+			} else if (prop === 'email') {
 				error.update((error) => {
 					return {
 						...error,
@@ -72,26 +61,31 @@
 				error.update((error) => {
 					return {
 						...error,
-						email: ''
-					};
-				});
-			}
-			if (contentError) {
-				error.update((error) => {
-					return {
-						...error,
 						content: 'Please write a message.'
-					};
-				});
-			} else {
-				error.update((error) => {
-					return {
-						...error,
-						content: ''
 					};
 				});
 			}
 		} else {
+			error.update((error) => {
+				return {
+					...error,
+					[prop]: ''
+				};
+			});
+		}
+	}
+	function handleSubmit() {
+		sent.set([false, 'unsent']);
+		isNotValidText($message.name)
+			? handleError('name', true)
+			: handleError('name', false);
+		!isValidEmail($message.email)
+			? handleError('email', true)
+			: handleError('email', false);
+		isNotValidText($message.content)
+			? handleError('content', true)
+			: handleError('content', false);
+		if ($error.name === '' && $error.email === '' && $error.content === '') {
 			submitEmail();
 		}
 	}

@@ -26,7 +26,11 @@
 <Card class="p-4 flex flex-col justify-between gap-y-4">
 	<div class="flex flex-row justify-between items-center gap-y-4">
 		<Typography size="2xl" weight="bold">Projects</Typography>
-		<Button on:click={() => gotoGithub()}>View GitHub Profile</Button>
+		<Button
+			on:click={() => gotoGithub()}
+			variant="redirect"
+			typographyVariant="inherit">View GitHub Profile</Button
+		>
 	</div>
 	<Typography
 		>There are currently {$derivedRepos.length} public projects.</Typography

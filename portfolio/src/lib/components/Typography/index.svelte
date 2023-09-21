@@ -9,7 +9,13 @@
 		| '2xl'
 		| '3xl';
 	export type TypographyWeight = 'light' | 'base' | 'semiBold' | 'bold';
-	export type TypographyVariant = 'error' | 'base' | 'success';
+	export type TypographyVariant =
+		| 'error'
+		| 'base'
+		| 'success'
+		| 'button'
+		| 'nav'
+		| 'inherit';
 </script>
 
 <script lang="ts">
@@ -38,7 +44,10 @@
 		'font-semibold': weight === 'semiBold',
 		'font-bold': weight === 'bold',
 		'text-red-600': variant === 'error',
-		'text-green-500': variant === 'success'
+		'text-green-500': variant === 'success',
+		'text-white': variant === 'button',
+		'text-primary': variant === 'nav',
+		'text-inherit': variant === 'inherit'
 	})}
 >
 	<slot />

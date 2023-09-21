@@ -50,5 +50,6 @@
 	input {
 		padding: 0.5rem;
 		border: none;
+		text-overflow: ellipsis;
 	}
 </style>
