@@ -8,6 +8,7 @@
 	import Icon from '../../components/Icon/index.svelte';
 	import Button from '../../components/Button/index.svelte';
 	import emailjs from '@emailjs/browser';
+	import { SERVICE_ID, TEMPLATE_ID, KEY } from '$lib/constants';
 	let clazz: string = '';
 	export { clazz as class };
 	const emptyObj = {
@@ -29,13 +30,12 @@
 		return text === '' || text === undefined || text === 'null';
 	}
 	function submitEmail() {
-		emailjs.send('service', 'template', $message, 'key').then(
+		emailjs.send(SERVICE_ID, TEMPLATE_ID, $message, KEY).then(
 			(res) => {
-				// console.log('Email sent', res.text);
 				sent.set([true, 'success']);
 			},
 			(error) => {
-				// console.log('Failed to send email', error.text);
+				console.log('Failed to send email', error.text);
 				sent.set([false, 'fail']);
 			}
 		);

@@ -20,7 +20,6 @@
 			return page.route.id as '/' | '/projects' | '/resume';
 		}
 	);
-	$: console.log($activePage);
 </script>
 
 <div class="background p-4 sticky top-0 z-10 w-full">

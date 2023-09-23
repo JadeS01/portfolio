@@ -18,7 +18,7 @@
 		on:click={(e) => handleBackdrop(e)}
 		on:keydown={(e) => handleBackdrop(e)}
 	>
-		<div class="bg-white rounded-lg shadow-lg p-4 h-[80%] w-[75%] ">
+		<div class="bg-white rounded-lg shadow-lg p-4 h-[90%] w-[75%]">
 			<slot />
 		</div>
 	</div>

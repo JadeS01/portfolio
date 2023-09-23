@@ -9,11 +9,11 @@
 
 <QueryClientProvider client={queryClient}>
 	<main>
-		<Navbar />
 		<div>
+			<Navbar />
 			<slot />
+			<Footer />
 		</div>
-		<Footer />
 	</main>
 </QueryClientProvider>
 

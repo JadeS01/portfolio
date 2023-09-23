@@ -114,7 +114,7 @@
 <Modal open={$open} {handleModal}>
 	<div class="h-full flex flex-col justify-between">
 		<div>
-			<div class="max-h-[170px] overflow-auto">
+			<div class="max-h-[200px] overflow-auto">
 				<img
 					src={$selectedProject.picture}
 					alt={$selectedProject.title}
